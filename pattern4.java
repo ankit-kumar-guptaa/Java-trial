@@ -1,22 +1,34 @@
-public class pattern2 {
+/*
+
+*     *
+*     *
+*     *
+*******
+*     *
+*     *
+*     *
+
+*/
+
+public class pattern4 {
     public static void main(String[] args) {
-        int n=22;
-        for(int i=0; i<n; i++)
+        int n=7;
+        for(int i = 0; i<n ; i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j =0;j<n;j++)
             {
-                if(i==0 || j==0 || i==n-1 || j==n-1)
+                if(i==3|| j==0|| j==n-1 )
                 {
                     System.out.print("*");
                 }
-                else
-                {
+                else{
                     System.out.print(" ");
                 }
 
             }
             System.out.println();
         }
+
     }
     
 }

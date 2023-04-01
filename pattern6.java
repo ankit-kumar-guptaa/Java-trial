@@ -1,11 +1,11 @@
-public class pattern2 {
+public class pattern6 {
     public static void main(String[] args) {
-        int n=22;
-        for(int i=0; i<n; i++)
+        int n=8;
+        for(int i=0;i<n;i++)
         {
-            for(int j=0; j<n; j++)
+            for(int j=0;j<n;j++)
             {
-                if(i==0 || j==0 || i==n-1 || j==n-1)
+                if(i==0&&j>0&&j<(n-2)/2 || j==0&&i>0||i==(n-2)/2 && j<=(n-2)/2 || j==(n-1)/2&&i>0)
                 {
                     System.out.print("*");
                 }
@@ -13,7 +13,6 @@ public class pattern2 {
                 {
                     System.out.print(" ");
                 }
-
             }
             System.out.println();
         }
