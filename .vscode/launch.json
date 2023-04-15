@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Guessure_game",
+            "request": "launch",
+            "mainClass": "Guessure_game",
+            "projectName": "java Code_84c8eefb"
+        },
+        {
+            "type": "java",
+            "name": "Calculatorp",
+            "request": "launch",
+            "mainClass": "Calculatorp",
+            "projectName": "java Code_84c8eefb"
+        },
+        {
+            "type": "java",
+            "name": "Method_overloading",
+            "request": "launch",
+            "mainClass": "Method_overloading",
+            "projectName": "java Code_84c8eefb"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
