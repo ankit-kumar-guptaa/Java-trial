@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+   <Style>
+    body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  position: relative;
+  width: 750px;
+  height: 400px;
+  margin-top: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  background: #fef0c3;
+  border-radius: 10px;
+}
+.lane-one {
+  width: 18%;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 60%;
+  left: 5%;
+  border-radius: 5px;
+}
+.bb {
+  width: 30px;
+  height: 200px;
+  position: absolute;
+  top: 40px;
+  left: 10%;
+}
+.bb .base {
+  width: 20px;
+  height: 60px;
+  background: #495355;
+  position: absolute;
+  top: 70%;
+  left: 5px;
+  border-radius: 2px;
+}
+.bb .rod {
+  width: 3px;
+  height: 100px;
+  background: #495355;
+  position: absolute;
+  top: 25%;
+  left: 13px;
+}
+.bb .head {
+  width: 50px;
+  height: 40px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 7px;
+  left: -11px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  background: #fbe6d1;
+}
+.head-base {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #495355;
+  position: absolute;
+  background: #f19389;
+  top: 10px;
+  left: 13px;
+  border-radius: 5px;
+}
+.head-line {
+  width: 30px;
+  height: 2px;
+  background: #495355;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+.bb-line-one {
+  width: 2px;
+  height: 30px;
+  background: #495355;
+  position: absolute;
+  top: 20px;
+  left: 12px;
+  transform: rotate(-12deg);
+}
+.sub-two {
+  left: 35px;
+  transform: rotate(12deg);
+}
+.ball {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid #495355;
+  background: #f19389;
+  position: absolute;
+  top: 52%;
+  left: 95px;
+  transform: rotate(-15deg);
+  animation: roll 2s infinite;
+}
+.ball .line,
+.ball .line-one,
+.ball .line-two {
+  width: 25px;
+  height: 20px;
+  border: 1px solid #495355;
+  border-radius: 50%;
+  border-left: none;
+  border-right: none;
+  position: absolute;
+}
+.ball .line-one {
+  border-top: none;
+  top: -10px;
+  left: 2px;
+}
+.ball .line-two {
+  top: 20px;
+  left: 2px;
+  border-bottom: none;
+}
+.lane-two {
+  width: 65%;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 60%;
+  left: 25%;
+  z-index: 22;
+  border-radius: 5px;
+}
+.lane-three {
+  width: 3%;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 60%;
+  right: 35px;
+  z-index: 22;
+  border-radius: 5px;
+}
+.house {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 40px;
+  left: 25%;
+}
+.middle-house {
+  width: 100px;
+  height: 150px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 45px;
+  left: 40%;
+  background: #f3938b;
+  z-index: 20;
+}
+.middle-house .house-lines-vert,
+.middle-house .house-line-01,
+.middle-house .house-line-02 {
+  height: 150px;
+  border: 0.5px solid #495355;
+  position: absolute;
+  top: 0px;
+}
+.middle-house .house-line-01 {
+  left: 15px;
+}
+.middle-house .house-line-02 {
+  right: 15px;
+}
+.middle-house .house-lines-hor,
+.middle-house .house-line-03,
+.middle-house .house-line-04,
+.middle-house .house-line-05,
+.middle-house .house-line-06,
+.middle-house .house-line-07 {
+  width: 100px;
+  border: 0.5px solid #495355;
+  position: absolute;
+}
+.middle-house .house-line-03 {
+  top: 20px;
+}
+.middle-house .house-line-04 {
+  top: 50px;
+}
+.middle-house .house-line-05 {
+  top: 80px;
+}
+.middle-house .house-line-06 {
+  top: 110px;
+}
+.middle-house .house-line-07 {
+  top: 140px;
+}
+.middle-house .door-bar {
+  width: 80px;
+  height: 5px;
+  border: 3px solid #495355;
+  border-radius: 10px;
+  position: absolute;
+  top: 25px;
+  left: 6px;
+  background: white;
+}
+.middle-house .door {
+  width: 65px;
+  height: 120px;
+  border: 3px solid #495355;
+  border-top: none;
+  border-bottom: none;
+  position: absolute;
+  top: 35px;
+  left: 13px;
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
+}
+.door-line {
+  height: 115px;
+  border: 1px solid #495355;
+  position: absolute;
+  left: 48%;
+}
+.door-sub-line,
+.door-handle-left,
+.door-handle-right {
+  height: 15px;
+  border: 1px solid #495355;
+  position: absolute;
+  border-radius: 5px;
+  top: 40%;
+}
+.door-handle-left {
+  left: 24px;
+}
+.door-handle-right {
+  right: 25px;
+}
+.middle-lane-top {
+  width: 120px;
+  height: 10px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 32px;
+  left: 37.5%;
+  border-radius: 10px;
+  background: white;
+}
+.right-middle {
+  width: 80px;
+  height: 140px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 30%;
+  right: 13%;
+  border-bottom: none;
+  background: #fbe6d5;
+}
+.right-middle .shadow-line {
+  width: 13px;
+  height: 140px;
+  background: #b9afa5;
+  border-bottom: none;
+}
+.right-middle .sub-line,
+.right-middle .right-one .left-one-inner .line-01,
+.right-one .left-one-inner .right-middle .line-01,
+.right-middle .right-one .left-one-inner .line-02,
+.right-one .left-one-inner .right-middle .line-02,
+.right-middle .right-one .left-one-inner .line-03,
+.right-one .left-one-inner .right-middle .line-03,
+.right-middle .right-one .left-one-inner .line-04,
+.right-one .left-one-inner .right-middle .line-04,
+.right-middle .right-one .left-one-inner .line-05,
+.right-one .left-one-inner .right-middle .line-05,
+.right-middle .right-one .left-one-inner .line-06,
+.right-one .left-one-inner .right-middle .line-06,
+.right-middle .left-one .left-one-inner .line-01,
+.left-one .left-one-inner .right-middle .line-01,
+.right-middle .left-one .left-one-inner .line-02,
+.left-one .left-one-inner .right-middle .line-02,
+.right-middle .left-one .left-one-inner .line-03,
+.left-one .left-one-inner .right-middle .line-03,
+.right-middle .left-one .left-one-inner .line-04,
+.left-one .left-one-inner .right-middle .line-04,
+.right-middle .left-one .left-one-inner .line-05,
+.left-one .left-one-inner .right-middle .line-05,
+.right-middle .left-one .left-one-inner .line-06,
+.left-one .left-one-inner .right-middle .line-06 {
+  width: 77px;
+  height: 15px;
+  border: 3px solid #495355;
+  border-top: none;
+  position: absolute;
+  top: 0px;
+  background-color: #f3938b;
+}
+.right-middle .window-lane {
+  width: 60px;
+  height: 5px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 42px;
+  left: 7px;
+  border-radius: 5px;
+  background: white;
+}
+.right-middle .window {
+  width: 50px;
+  height: 30px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
+  border-radius: 3px;
+}
+.right-middle .window .window-hor {
+  height: 30px;
+  border: 0.5px solid #495355;
+  position: absolute;
+  left: 45%;
+}
+.right-middle .window .window-vert {
+  width: 50px;
+  border: 0.5px solid #495355;
+  position: absolute;
+  top: 50%;
+}
+.left-middle {
+  width: 80px;
+  height: 140px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 30%;
+  left: 19%;
+  border-bottom: none;
+  background: #fbe6d5;
+}
+.left-middle .shadow-line {
+  width: 13px;
+  height: 140px;
+  background: #b9afa5;
+  border-bottom: none;
+}
+.left-middle .sub-line,
+.left-middle .right-one .left-one-inner .line-01,
+.right-one .left-one-inner .left-middle .line-01,
+.left-middle .right-one .left-one-inner .line-02,
+.right-one .left-one-inner .left-middle .line-02,
+.left-middle .right-one .left-one-inner .line-03,
+.right-one .left-one-inner .left-middle .line-03,
+.left-middle .right-one .left-one-inner .line-04,
+.right-one .left-one-inner .left-middle .line-04,
+.left-middle .right-one .left-one-inner .line-05,
+.right-one .left-one-inner .left-middle .line-05,
+.left-middle .right-one .left-one-inner .line-06,
+.right-one .left-one-inner .left-middle .line-06,
+.left-middle .left-one .left-one-inner .line-01,
+.left-one .left-one-inner .left-middle .line-01,
+.left-middle .left-one .left-one-inner .line-02,
+.left-one .left-one-inner .left-middle .line-02,
+.left-middle .left-one .left-one-inner .line-03,
+.left-one .left-one-inner .left-middle .line-03,
+.left-middle .left-one .left-one-inner .line-04,
+.left-one .left-one-inner .left-middle .line-04,
+.left-middle .left-one .left-one-inner .line-05,
+.left-one .left-one-inner .left-middle .line-05,
+.left-middle .left-one .left-one-inner .line-06,
+.left-one .left-one-inner .left-middle .line-06 {
+  width: 77px;
+  height: 15px;
+  border: 3px solid #495355;
+  border-top: none;
+  position: absolute;
+  top: 0px;
+  background-color: #f3938b;
+}
+.left-middle .window-lane {
+  width: 60px;
+  height: 5px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 42px;
+  left: 7px;
+  border-radius: 5px;
+  background: white;
+}
+.left-middle .window {
+  width: 50px;
+  height: 30px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
+  border-radius: 3px;
+}
+.left-middle .window .window-hor {
+  height: 30px;
+  border: 0.5px solid #495355;
+  position: absolute;
+  left: 45%;
+}
+.left-middle .window .window-vert {
+  width: 50px;
+  border: 0.5px solid #495355;
+  position: absolute;
+  top: 50%;
+}
+.left-bar {
+  width: 75px;
+  height: 10px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 12px;
+  left: 5px;
+  border-radius: 10px;
+  background: #505a5c;
+}
+.right-bar {
+  width: 75px;
+  height: 10px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 12px;
+  left: 85%;
+  border-radius: 10px;
+  background: #505a5c;
+}
+.right-one {
+  width: 65px;
+  height: 180px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 18px;
+  right: -17px;
+  border-bottom: none;
+  border-radius: 5px;
+  z-index: 10;
+  background: #8e9899;
+}
+.right-one .left-one-inner {
+  width: 45px;
+  height: 180px;
+  border: 2px solid #495355;
+  border-bottom: none;
+  border-top: none;
+  border-radius: 5px;
+  position: absolute;
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
+  left: 7px;
+}
+.right-one .left-one-inner .line,
+.right-one .left-one-inner .ball .line-one,
+.ball .right-one .left-one-inner .line-one,
+.right-one .left-one-inner .ball .line-two,
+.ball .right-one .left-one-inner .line-two {
+  height: 180px;
+  border: 0.5px solid #495355;
+  background: black;
+  position: absolute;
+  left: 20px;
+}
+.right-one .left-one-inner .sub-line,
+.right-one .left-one-inner .line-01,
+.right-one .left-one-inner .line-02,
+.right-one .left-one-inner .line-03,
+.right-one .left-one-inner .line-04,
+.right-one .left-one-inner .line-05,
+.right-one .left-one-inner .line-06,
+.right-one .left-one-inner .left-one .left-one-inner .line-01,
+.left-one .left-one-inner .right-one .left-one-inner .line-01,
+.right-one .left-one-inner .left-one .left-one-inner .line-02,
+.left-one .left-one-inner .right-one .left-one-inner .line-02,
+.right-one .left-one-inner .left-one .left-one-inner .line-03,
+.left-one .left-one-inner .right-one .left-one-inner .line-03,
+.right-one .left-one-inner .left-one .left-one-inner .line-04,
+.left-one .left-one-inner .right-one .left-one-inner .line-04,
+.right-one .left-one-inner .left-one .left-one-inner .line-05,
+.left-one .left-one-inner .right-one .left-one-inner .line-05,
+.right-one .left-one-inner .left-one .left-one-inner .line-06,
+.left-one .left-one-inner .right-one .left-one-inner .line-06 {
+  width: 45px;
+  border: 0.5px solid black;
+  position: absolute;
+}
+.right-one .left-one-inner .line-01 {
+  top: 25px;
+}
+.right-one .left-one-inner .line-02 {
+  top: 50px;
+}
+.right-one .left-one-inner .line-03 {
+  top: 75px;
+}
+.right-one .left-one-inner .line-04 {
+  top: 100px;
+}
+.right-one .left-one-inner .line-05 {
+  top: 125px;
+}
+.right-one .left-one-inner .line-06 {
+  top: 150px;
+}
+.left-one {
+  width: 65px;
+  height: 180px;
+  border: 3px solid #495355;
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  border-bottom: none;
+  border-radius: 5px;
+  z-index: 10;
+  background: #8e9899;
+}
+.left-one .left-one-inner {
+  width: 45px;
+  height: 180px;
+  border: 2px solid #495355;
+  border-bottom: none;
+  border-top: none;
+  border-radius: 5px;
+  position: absolute;
+  background: linear-gradient(to right, #0ed2f7, #b2fefa);
+  left: 7px;
+}
+.left-one .left-one-inner .line,
+.left-one .left-one-inner .ball .line-one,
+.ball .left-one .left-one-inner .line-one,
+.left-one .left-one-inner .ball .line-two,
+.ball .left-one .left-one-inner .line-two {
+  height: 180px;
+  border: 0.5px solid #495355;
+  background: black;
+  position: absolute;
+  left: 20px;
+}
+.left-one .left-one-inner .sub-line,
+.left-one .left-one-inner .right-one .left-one-inner .line-01,
+.right-one .left-one-inner .left-one .left-one-inner .line-01,
+.left-one .left-one-inner .right-one .left-one-inner .line-02,
+.right-one .left-one-inner .left-one .left-one-inner .line-02,
+.left-one .left-one-inner .right-one .left-one-inner .line-03,
+.right-one .left-one-inner .left-one .left-one-inner .line-03,
+.left-one .left-one-inner .right-one .left-one-inner .line-04,
+.right-one .left-one-inner .left-one .left-one-inner .line-04,
+.left-one .left-one-inner .right-one .left-one-inner .line-05,
+.right-one .left-one-inner .left-one .left-one-inner .line-05,
+.left-one .left-one-inner .right-one .left-one-inner .line-06,
+.right-one .left-one-inner .left-one .left-one-inner .line-06,
+.left-one .left-one-inner .line-01,
+.left-one .left-one-inner .line-02,
+.left-one .left-one-inner .line-03,
+.left-one .left-one-inner .line-04,
+.left-one .left-one-inner .line-05,
+.left-one .left-one-inner .line-06 {
+  width: 45px;
+  border: 0.5px solid black;
+  position: absolute;
+}
+.left-one .left-one-inner .line-01 {
+  top: 25px;
+}
+.left-one .left-one-inner .line-02 {
+  top: 50px;
+}
+.left-one .left-one-inner .line-03 {
+  top: 75px;
+}
+.left-one .left-one-inner .line-04 {
+  top: 100px;
+}
+.left-one .left-one-inner .line-05 {
+  top: 125px;
+}
+.left-one .left-one-inner .line-06 {
+  top: 150px;
+}
+.tree {
+  width: 80px;
+  height: 162px;
+  position: absolute;
+  right: 70px;
+  top: 20%;
+}
+.tree-stem {
+  height: 75px;
+  width: 0px;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  z-index: 3;
+}
+.tree-branch {
+  height: 15px;
+  width: 0px;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 50%;
+  left: 53%;
+  transform: rotate(30deg);
+  z-index: 3;
+}
+.leaves-one {
+  width: 60px;
+  height: 60px;
+  background-color: #c3dfa4;
+  border-radius: 50%;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+.leaves-two {
+  width: 40px;
+  height: 40px;
+  background-color: #c3dfa4;
+  border-radius: 50%;
+  border: 2px solid #495355;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  z-index: 10;
+  border-bottom: none;
+}
+@keyframes roll {
+  50% {
+    transform: rotate(90deg) translateY(-10px);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+   </Style>
+
+    <title>House Illustration using HTML and CSS - Ankit Kumar Gupta</title>
+</head>
+
+<body>
+    <!-- Further code here -->
+    <div class="container">
+        <center>
+            <h1 style="color: rgb(37, 120, 228);">Made By Ankit Kumar Gupta</h1>
+        </center>
+        <div class="lane-one"></div>
+        <div class="bb">
+            <div class="base"></div>
+            <div class="rod"></div>
+            <div class="head">
+                <div class="head-base"></div>
+                <div class="head-line"></div>
+                <div class="bb-line-one"></div>
+                <div class="bb-line-one sub-two"></div>
+            </div>
+        </div>
+        <div class="ball">
+            <div class="line-one"></div>
+            <div class="line-two"></div>
+        </div>
+        <div class="lane-two"></div>
+        <div class="house">
+            <div class="left-bar"></div>
+            <div class="left-one">
+                <div class="left-one-inner">
+                    <div class="line-01"></div>
+                    <div class="line-02"></div>
+                    <div class="line-03"></div>
+                    <div class="line-04"></div>
+                    <div class="line-05"></div>
+                    <div class="line-06"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+            <div class="left-middle">
+                <div class="shadow-line"></div>
+                <div class="sub-line"></div>
+                <div class="window-lane"></div>
+                <div class="window">
+                    <div class="window-hor"></div>
+                    <div class="window-vert"></div>
+                </div>
+            </div>
+            <div class="middle-lane-top"></div>
+            <div class="middle-house">
+                <div class="house-line-01"></div>
+                <div class="house-line-02"></div>
+                <div class="house-line-03"></div>
+                <div class="house-line-04"></div>
+                <div class="house-line-05"></div>
+                <div class="house-line-06"></div>
+                <div class="house-line-07"></div>
+                <div class="door-bar"></div>
+                <div class="door">
+                    <div class="door-handle-left"></div>
+                    <div class="door-handle-right"></div>
+                    <div class="door-line"></div>
+                </div>
+            </div>
+            <div class="right-middle">
+                <div class="sub-line"></div>
+                <div class="window-lane"></div>
+                <div class="window">
+                    <div class="window-hor"></div>
+                    <div class="window-vert"></div>
+                </div>
+            </div>
+            <div class="right-bar"></div>
+            <div class="right-one">
+                <div class="left-one-inner">
+                    <div class="line-01"></div>
+                    <div class="line-02"></div>
+                    <div class="line-03"></div>
+                    <div class="line-04"></div>
+                    <div class="line-05"></div>
+                    <div class="line-06"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </div>
+        <div class="tree">
+            <div class="tree-branch"></div>
+            <div class="tree-stem"></div>
+            <div class="leaves-one"></div>
+            <div class="leaves-two"></div>
+        </div>
+        <div class="lane-three"></div>
+    </div>
+</body>
+
+</html>
