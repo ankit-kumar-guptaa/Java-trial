@@ -9,6 +9,20 @@
             "name": "Guessure_game",
             "request": "launch",
             "mainClass": "Guessure_game",
+            "projectName": "Java_code_73e68fdc"
+        },
+        {
+            "type": "java",
+            "name": "Method_overloading",
+            "request": "launch",
+            "mainClass": "Method_overloading",
+            "projectName": "Java_code_73e68fdc"
+        },
+        {
+            "type": "java",
+            "name": "Guessure_game",
+            "request": "launch",
+            "mainClass": "Guessure_game",
             "projectName": "java Code_84c8eefb"
         },
         {
