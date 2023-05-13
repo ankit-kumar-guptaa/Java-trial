@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "basic",
+            "request": "launch",
+            "mainClass": "basic",
+            "projectName": "Java_code_d735629b"
+        },
+        {
+            "type": "java",
             "name": "Guessure_game",
             "request": "launch",
             "mainClass": "Guessure_game",
